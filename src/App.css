@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar{
+  padding: 10px;
+  display: flex;
+  justify-Content: space-between;
+  width: 120px;
+}
+
+.form-demo{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 15px;
+  padding: 10px;
+}
