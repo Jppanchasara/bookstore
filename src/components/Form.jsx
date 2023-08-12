@@ -1,4 +1,4 @@
-import { Button, FormHelperText, TextField, Typography } from "@mui/material";
+import { Button, Container, FormHelperText, TableRow, TextField, Typography } from "@mui/material";
 import { Form, Formik, ErrorMessage, } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
@@ -92,6 +92,7 @@ const Form1 = () => {
                 return (<Form>
                     <div className="form-demo">
                         <Typography variant="h3" sx={{ color: "red" }}>Register Here!</Typography>
+                       
 
                         <TextField label="UserName" name="username" error={errors.username} variant="outlined" value={values.username} onChange={(e) => setFieldValue("username", e.target.value)} onBlur={handleBlur} />
                         <FormHelperText error><ErrorMessage name="username"></ErrorMessage></FormHelperText>
@@ -105,6 +106,7 @@ const Form1 = () => {
                         <TextField label="Password" name="password" error={errors.password} variant="outlined" value={values.password} onChange={(e) => setFieldValue("password", e.target.value)} />
                         <FormHelperText error><ErrorMessage name="password"></ErrorMessage></FormHelperText>
                         <Button variant="contained" type="submit" >submit</Button>
+                        <h2>Don't have an account?<Button href="#text-buttons"   >Login</Button></h2>
                         <ToastContainer/>
 
                     </div>

@@ -112,7 +112,7 @@ const LoginPage = () => {
             }}
 
         </Formik>
-        <h2>Don't have an account?<Button href="#text-buttons" onClick={navigate("/form")}>Register</Button></h2>
+        <h2>Don't have an account?<Button href="#text-buttons"   onClick={navigate("/form")}>Register</Button></h2>
         </div>
         </center>
 

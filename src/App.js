@@ -43,12 +43,12 @@ function App() {
           //   }
           // }
         >
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/home">Home</NavLink>
           
           <NavLink to="/books">BookList</NavLink>
-          <NavLink to="">About</NavLink>
-          <NavLink to="">Serch</NavLink>
-          <NavLink to="">Preson</NavLink>
+          <NavLink to="*">About</NavLink>
+          <NavLink to="*">Serch</NavLink>
+          <NavLink to="*">Preson</NavLink>
           
           
         </div>
