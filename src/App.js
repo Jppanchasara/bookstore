@@ -7,6 +7,7 @@ import PageNotFound from "./components/PageNotFound";
 import { GlobalStyle } from "./Style/globalStyle";
 import From from "./components/Form";
 import { ThemeProvider, createTheme } from "@mui/material";
+import LoginPage from "./components/login";
 
 function App() {
   const name = "jayesh";
@@ -29,29 +30,31 @@ function App() {
       <BookList></BookList> */}
       <BrowserRouter>
         <div
-          // (1)style={{
-          //   padding: 10,
-          //   display: "flex",
-          //   justifyContent: "space-between",
-          //   width: 120,
-          // }}
+          style={{
+            padding: 10,
+            display: "flex",
+            justifyContent: "space-between",
+            width: 120,
+          }}
           // (2)className="navbar"
-          style={
-            {
-              ...GlobalStyle.navbar,
-            }
-          }
+          // style={
+          //   {
+          //     ...GlobalStyle.navbar,
+          //   }
+          // }
         >
           <NavLink to="/">Home</NavLink>
           <NavLink to="/form">form</NavLink>
           <NavLink to="/books">BookList</NavLink>
+          <NavLink to="/login">Login</NavLink>
           
         </div>
 
         <Routes>
-          <Route path="/" element={<HomePage username={name} />}></Route>
+          <Route path="/home" element={<HomePage username={name} />}></Route>
           <Route path="/books" element={<BookList />}></Route>
           <Route path="/form" element={<From />}></Route>
+          <Route path="/" element={<LoginPage/>}></Route>
           <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
         </Routes>
       </BrowserRouter>
