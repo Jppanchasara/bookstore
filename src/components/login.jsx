@@ -75,7 +75,7 @@ const LoginPage = () => {
             toast.success("login sucessfully ",{position:"top-right"})
             navigate("/home");
         } }).catch((e)=>{
-           //toast.success("failed",{position:"bottom-right"});
+         
             toast.error("Please create account",{position:"top-right"})
         });
         // await authServices.Register(payload).then((response)=>{
@@ -87,6 +87,8 @@ const LoginPage = () => {
         // }).catch(()=>{});
     }
     return (
+        <center>
+        <div>
         <Formik initialValues={{ email: "", password: "" }} validationSchema={validationSchema} onSubmit={(values) => {handleSubmit(values)}}>
             {({ values, errors, setFieldValue, handleBlur }) => {
 
@@ -110,6 +112,9 @@ const LoginPage = () => {
             }}
 
         </Formik>
+        <h2>Don't have an account?<Button href="#text-buttons" onClick={navigate("/form")}>Register</Button></h2>
+        </div>
+        </center>
 
     );
 

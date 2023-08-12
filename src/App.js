@@ -36,7 +36,7 @@ function App() {
             justifyContent: "space-between",
             width: 120,
           }}
-          // (2)className="navbar"
+          //className="navbar"
           // style={
           //   {
           //     ...GlobalStyle.navbar,
@@ -44,9 +44,12 @@ function App() {
           // }
         >
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/form">form</NavLink>
+          
           <NavLink to="/books">BookList</NavLink>
-          <NavLink to="/login">Login</NavLink>
+          <NavLink to="">About</NavLink>
+          <NavLink to="">Serch</NavLink>
+          <NavLink to="">Preson</NavLink>
+          
           
         </div>
 

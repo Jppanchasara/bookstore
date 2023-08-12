@@ -4,6 +4,7 @@ export const GlobalStyle={
             display: "flex",
             justifyContent: "space-between",
             width: 160,
+            innerHeight:110
     }
 
 }

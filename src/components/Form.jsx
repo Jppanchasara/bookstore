@@ -8,11 +8,13 @@ import authServices from "../services/authServices";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate, NavLink } from "react-router-dom";
 
 
 
 
 const Form1 = () => {
+    const navigate = useNavigate();
     // const [UserName,setUserName]=useState("");
     // const [Password ,setPassword]=useState("");
 
@@ -68,6 +70,7 @@ const Form1 = () => {
         { if(res && res===200){
            
             toast.success("Register sucessfully ",{position:"top-right"})
+            //navigate("/login");
         } }).catch((e)=>{
            //toast.success("failed",{position:"bottom-right"});
             toast.error("You are Already, Registered please login",{position:"top-right"})
@@ -81,6 +84,7 @@ const Form1 = () => {
         // }).catch(()=>{});
     }
     return (
+        <center>
         <Formik initialValues={{ username: "", age: "", email: "", password: "" }} validationSchema={validationSchema} onSubmit={(values) => handleSubmit(values)}>
             {({ values, errors, setFieldValue, handleBlur }) => {
 
@@ -108,6 +112,7 @@ const Form1 = () => {
             }}
 
         </Formik>
+        </center>
 
     );
 
