@@ -53,7 +53,7 @@ const Form1 = () => {
                 console.log("error :",errors);
                 return (<Form>
                     <div className="form-demo">
-                        <Typography variant="h3" sx={{ color: "red" }}>Login Here!</Typography>
+                        <Typography variant="h3" sx={{ color: "red" }}>Register Here!</Typography>
                         
                         <TextField label="UserName" name="username" error={errors.username} variant="outlined" value={values.username} onChange={(e) => setFieldValue("username", e.target.value)} onBlur={handleBlur} />
                         <FormHelperText error><ErrorMessage name="username"></ErrorMessage></FormHelperText>
