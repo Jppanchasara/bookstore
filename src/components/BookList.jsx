@@ -13,16 +13,7 @@ const BookList = () => {
             <div>This Is booklist components</div>
             <button onClick={navigateHome}>Click me!</button>
             <Button onClick={navigateHome}>Go to home Page</Button>
-            <Button>Primary</Button>
-            <Button disabled>Disabled</Button>
-            <Button href="#text-buttons">Link</Button>
-            <Button variant="contained">Contained</Button>
-            <Button variant="contained" disabled>
-                Disabled
-            </Button>
-            <Button variant="contained" href="#contained-buttons">
-                Link
-            </Button>
+           
 
 
         </>

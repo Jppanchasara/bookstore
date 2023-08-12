@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound";
 import { GlobalStyle } from "./Style/globalStyle";
 import From from "./components/Form";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { Button, ThemeProvider, createTheme } from "@mui/material";
 import LoginPage from "./components/login";
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
             display: "flex",
             justifyContent: "space-between",
             width: 120,
+            
           }}
           //className="navbar"
           // style={
@@ -42,13 +43,29 @@ function App() {
           //     ...GlobalStyle.navbar,
           //   }
           // }
-        >
-          <NavLink to="/">Home</NavLink>
+        > <div style={{padding:10}}><NavLink to="/" >Home</NavLink></div>
+        <div style={{padding:10}}><NavLink to="/books">BookList</NavLink></div>
+        <div style={{padding:10}}><NavLink to="/login">login</NavLink></div>
+        <div style={{padding:10}}> <NavLink to="/form">register</NavLink></div>
+        <div style={{padding:10}}> <NavLink to="*">Preson</NavLink></div>
+        <div
+      style={{
+        display: 'flex',
+        justifyContent: 'Right',
+        alignItems: 'Right',
+        height: '5vh',
+        padding:10
+      }}
+    >
+      <Button>Logout</Button>
+      
+    </div>
           
-          <NavLink to="/books">BookList</NavLink>
-          <NavLink to="/login">login</NavLink>
-          <NavLink to="/form">register</NavLink>
-          <NavLink to="*">Preson</NavLink>
+          
+          
+          
+          
+         
           
           
         </div>
