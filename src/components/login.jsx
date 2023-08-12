@@ -73,7 +73,7 @@ const LoginPage = () => {
         { if(res  ){
            
             toast.success("login sucessfully ",{position:"top-right"})
-            navigate("/home");
+            
         } }).catch((e)=>{
          
             toast.error("Please create account",{position:"top-right"})

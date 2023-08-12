@@ -66,15 +66,19 @@ const Form1 = () => {
             "roleId": 2,
             "password": values.password,
         }
+
+
         axios.post('https://book-e-sell-node-api.vercel.app/api/user', payload).then((res) => 
-        { if(res && res===200){
+        { if(res ){
            
             toast.success("Register sucessfully ",{position:"top-right"})
             //navigate("/login");
-        } }).catch((e)=>{
+        } }).catch(()=>{
            //toast.success("failed",{position:"bottom-right"});
             toast.error("You are Already, Registered please login",{position:"top-right"})
         });
+
+
         // await authServices.Register(payload).then((response)=>{
         //     console.log(response);
         //     if(response && response==200){
@@ -106,7 +110,7 @@ const Form1 = () => {
                         <TextField label="Password" name="password" error={errors.password} variant="outlined" value={values.password} onChange={(e) => setFieldValue("password", e.target.value)} />
                         <FormHelperText error><ErrorMessage name="password"></ErrorMessage></FormHelperText>
                         <Button variant="contained" type="submit" >submit</Button>
-                        <h2>Don't have an account?<Button href="#text-buttons"   >Login</Button></h2>
+                        <h2>Don't have an account?<Button href="#text-buttons"  >Login</Button></h2>
                         <ToastContainer/>
 
                     </div>

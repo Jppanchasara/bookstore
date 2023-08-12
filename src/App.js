@@ -43,21 +43,21 @@ function App() {
           //   }
           // }
         >
-          <NavLink to="/home">Home</NavLink>
+          <NavLink to="/">Home</NavLink>
           
           <NavLink to="/books">BookList</NavLink>
-          <NavLink to="*">About</NavLink>
-          <NavLink to="*">Serch</NavLink>
+          <NavLink to="/login">login</NavLink>
+          <NavLink to="/form">register</NavLink>
           <NavLink to="*">Preson</NavLink>
           
           
         </div>
 
         <Routes>
-          <Route path="/home" element={<HomePage username={name} />}></Route>
+          <Route path="/" element={<HomePage username={name} />}></Route>
           <Route path="/books" element={<BookList />}></Route>
           <Route path="/form" element={<From />}></Route>
-          <Route path="/" element={<LoginPage/>}></Route>
+          <Route path="/login" element={<LoginPage/>}></Route>
           <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
         </Routes>
       </BrowserRouter>
