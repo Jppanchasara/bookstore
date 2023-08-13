@@ -1,13 +1,21 @@
+
 import React from "react";
 
-const HomePage=({username})=>{
-    //const {username}=Props
-    return(<div>This is a Home Page used by {username} </div>);
+import BookSearch from './bookserch.js';
+import { useState, useEffect } from 'react';
+
+import WithAuth from "../layout/withAuth";
+const HomePage = ({ username }) => {
+ 
+
+  return (
+    <div>
+    <BookSearch/>
+  </div>
+  
+    
+    );
 }
 
-export default HomePage
-
-//Props--{Props.properticename}
-//sername--const {username}=Props---{username}
-//{username}--{username}
+export default WithAuth(HomePage)
 

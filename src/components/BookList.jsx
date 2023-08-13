@@ -11,8 +11,7 @@ const BookList = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    setIsLoading(true);
-
+    
     setIsLoading(true);
     axios.get('https://book-e-sell-node-api.vercel.app/api/book/all')
       .then(response => {
