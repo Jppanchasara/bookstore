@@ -3,20 +3,29 @@ import React from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 
 const BookList = () => {
-    const navigate = useNavigate();
-    const navigateHome = () => {
-        navigate('/');
-        <NavLink to={'/'}></NavLink>
-    };
+    // const [data, setData] = useState([]);
+
+    
+   
+
+//   useEffect(() => {
+//     // Make an API call in the useEffect hook
+//     axios.get('https://book-e-sell-node-api.vercel.app/api/book/all')
+//       .then(response => {
+//         // Process the API response and set the data in state
+//         setData(response.data);
+//       })
+//       .catch(error => {
+//         console.error('Error fetching data:', error);
+//       });
+//   }, []);
+
     return (
-        <>
-            <div>This Is booklist components</div>
-            <button onClick={navigateHome}>Click me!</button>
-            <Button onClick={navigateHome}>Go to home Page</Button>
-           
+        <div>
+            <h1>Data GridView</h1>
+            
+        </div>
 
-
-        </>
     );
 
 }

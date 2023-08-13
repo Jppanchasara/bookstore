@@ -41,14 +41,14 @@ const LoginPage = () => {
     // }, [userdetails.username])
 
 
-    // const [userData,setUserData]=useState();
-    // const getData= async()=>{
-    //     await axios.get("https://book-e-sell-node-api.vercel.app/api/user/byId?id=625").then((res)=>setUserData(res.data));
-    // }
-    // useEffect(()=>{
-    //     getData();
-    // },[])
-    // console.log("2606",userData);
+    const [userData,setUserData]=useState();
+    const getData= async()=>{
+        await axios.get("https://book-e-sell-node-api.vercel.app/api/user/byId?id=625").then((res)=>setUserData(res.data));
+    }
+    useEffect(()=>{
+        getData();
+    },[])
+    console.log("2606",userData);
 
     
     const validationSchema = Yup.object().shape({
@@ -70,21 +70,15 @@ const LoginPage = () => {
             "password": values.password,
         }
         axios.post('https://book-e-sell-node-api.vercel.app/api/user/login', payload).then((res) => 
-        { if(res  ){
+        { if(res   && res.status===200){
            
-            toast.success("login sucessfully ",{position:"top-right"})
+            toast.success("login sucessfully ",{position:"bottom-right"});
+            navigate("/home");
             
         } }).catch((e)=>{
-         
-            toast.error("Please create account",{position:"top-right"})
+            toast.error("Please create account",{position:"top-right"});
         });
-        // await authServices.Register(payload).then((response)=>{
-        //     console.log(response);
-        //     if(response && response==200){
-        //         toast("Data sucessfully submited!")
-        //     }
-
-        // }).catch(()=>{});
+        
     }
     return (
         <center>
@@ -112,7 +106,7 @@ const LoginPage = () => {
             }}
 
         </Formik>
-        <h2>Don't have an account?<Button href="#text-buttons"   onClick={navigate("/form")}>Register</Button></h2>
+        <h2>Don't have an account?<Button href="#text-buttons"   >Register</Button></h2>
         </div>
         </center>
 

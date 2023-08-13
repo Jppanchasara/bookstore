@@ -43,9 +43,9 @@ function App() {
           //     ...GlobalStyle.navbar,
           //   }
           // }
-        > <div style={{padding:10}}><NavLink to="/" >Home</NavLink></div>
+        > <div style={{padding:10}}><NavLink to="/home" >Home</NavLink></div>
         <div style={{padding:10}}><NavLink to="/books">BookList</NavLink></div>
-        <div style={{padding:10}}><NavLink to="/login">login</NavLink></div>
+        <div style={{padding:10}}><NavLink to="/">login</NavLink></div>
         <div style={{padding:10}}> <NavLink to="/form">register</NavLink></div>
         <div style={{padding:10}}> <NavLink to="*">Preson</NavLink></div>
         <div
@@ -71,10 +71,10 @@ function App() {
         </div>
 
         <Routes>
-          <Route path="/" element={<HomePage username={name} />}></Route>
+          <Route path="/home" element={<HomePage username={name} />}></Route>
           <Route path="/books" element={<BookList />}></Route>
           <Route path="/form" element={<From />}></Route>
-          <Route path="/login" element={<LoginPage/>}></Route>
+          <Route path="/" element={<LoginPage/>}></Route>
           <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
         </Routes>
       </BrowserRouter>
