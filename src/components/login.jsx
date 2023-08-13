@@ -10,7 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import BookList from "./BookList";
 import { useNavigate, NavLink } from "react-router-dom";
-
+import Cookies from "js-cookie";
 
 
 
@@ -33,23 +33,7 @@ const LoginPage = () => {
 
     });
 
-    // useEffect(() => {
-    //     if (userdetails.username.length > 4) {
-    //         console.log("kjadsbfkjdb")
-    //     }
-
-    // }, [userdetails.username])
-
-
-    const [userData,setUserData]=useState();
-    const getData= async()=>{
-        await axios.get("https://book-e-sell-node-api.vercel.app/api/user/byId?id=625").then((res)=>setUserData(res.data));
-    }
-    useEffect(()=>{
-        getData();
-    },[])
-    console.log("2606",userData);
-
+    
     
     const validationSchema = Yup.object().shape({
         password: Yup.string().min(8).required("password should not be empty"),
@@ -74,6 +58,7 @@ const LoginPage = () => {
            
             toast.success("login sucessfully ",{position:"bottom-right"});
             navigate("/home");
+            Cookies.set("auth_email",values.email);
             
         } }).catch((e)=>{
             toast.error("Please create account",{position:"top-right"});

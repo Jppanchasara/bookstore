@@ -3,6 +3,7 @@ import React from "react";
 import './Booklist.css'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import WithAuth from "../layout/withAuth";
 
 const BookList = () => {
 
@@ -63,4 +64,4 @@ const BookList = () => {
 
 }
 
-export default BookList
+export default WithAuth(BookList)
